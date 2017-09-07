@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {UsuarioService} from '../services/usuario.service';
-import { Router, ActivatedRoute, Params} from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -12,8 +12,7 @@ export class LoginComponent implements OnInit {
 
 
   constructor(private _usuarioService: UsuarioService,
-              private _route:ActivatedRoute,
-              private _router: Router) {
+              private router: Router) {
   }
 
   ngOnInit() {
@@ -26,15 +25,13 @@ export class LoginComponent implements OnInit {
     var password = e.target.elements[1].value;
     this._usuarioService.postUsuario(username, password).subscribe(
       data => this.goToHome(data),
-      error => alert(error),
-      () => console.log("Finished!", resultado)
+     error => alert(error)
     );
   }
 
   goToHome(data) {
-    if (data === 'autorizado') {
-      this._router.navigate(['/home'])
-      ;
+   if (JSON.parse(data._body) ==='autorizado') {
+      this.router.navigate(['home']);
     }
   }
 }
