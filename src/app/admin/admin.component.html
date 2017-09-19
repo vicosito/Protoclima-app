@@ -1,31 +1,51 @@
-<div class="container-fluid">
-  <side-menu></side-menu>
-</div>
 <div class="container">
-  <h1>Registro de Usuarios</h1>
-  <form role="form">
-    <div class="form-group">
-      <label for="nombre">Nombre</label>
-      <input type="text" class="form-control" id="nombre" >
+  <div class="row">
+    <div class="col-lg-3">
+      <side-menu></side-menu>
     </div>
-    <div class="form-group">
-      <label for="apellido">Apellido</label>
-      <input type="text" class="form-control" id="apellido" >
+
+
+    <div class="col-lg-6">
+
+
+      <h1>Registro de Usuarios</h1>
+      <form #formUsuario="ngForm" (ngSubmit)="onSubmit(); formUsuario.reset();">
+        <div class="form-group">
+          <label for="nombre">Nombre</label>
+          <input type="text" class="form-control" id="nombre" [(ngModel)]="usuario.name" name="name"
+          required>
+        </div>
+        <div class="form-group">
+          <label for="apellido">Apellido</label>
+          <input type="text" class="form-control" id="apellido" [(ngModel)]="usuario.lastname" name="lastname"
+          required>
+
+        </div>
+        <div class="form-group">
+          <label for="login">Login</label>
+          <input type="text" class="form-control" id="login" [(ngModel)]="usuario.login" name="login"
+          required>
+
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="text" class="form-control" id="password" [(ngModel)]="usuario.password" name="password"
+          required>
+        </div>
+        <div class="form-group">
+          <label for="email">Correo Electronico</label>
+          <input type="email" class="form-control" id="email" [(ngModel)]="usuario.email" name="email"
+          required>
+        </div>
+
+        <button type="submit" class="btn btn-success" [disabled]="!formUsuario.form.valid">Grabar</button>
+      </form>
 
     </div>
-    <div class="form-group">
-      <label for="login">Login</label>
-      <input type="text" class="form-control" id="login" >
-    </div>
-    <div class="form-group">
-      <label for="password">Password</label>
-      <input type="text" class="form-control" id="password">
-    </div>
-    <div class="form-group">
-      <label for="email">Correo Electronico</label>
-      <input type="text" class="form-control" id="email" >
-    </div>
-    <button type="submit" class="btn btn-default">Grabar</button>
-  </form>
- </div>
+  </div>
+</div>
+<div *ngIf="saveOk==true" class="alert alert-success">
+  <button type="button" class="close" data-dismiss="alert">&times;</button>
+  <strong>Exito !!</strong> El registro fue guardado existosamente.
+</div>
 
