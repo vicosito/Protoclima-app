@@ -1,12 +1,34 @@
-<div>
-  <ul>
-    <li><a [routerLink]="['/home']"[routerLinkActive]="['activado']">Home</a></li>
-    <li><a [routerLink]="['/invernadero']"[routerLinkActive]="['activado']">Invernaderos</a></li>
-    <li><a [routerLink]="['/microcontrolador']"[routerLinkActive]="['activado']">Microcontroladores</a></li>
-    <li><a [routerLink]="['/sensor']"[routerLinkActive]="['activado']">Sensore</a></li>
-    <li><a [routerLink]="['/actuador']"[routerLinkActive]="['activado']">Actuadores</a></li>
-    <li><a [routerLink]="['/pcontrol']"[routerLinkActive]="['activado']">Parm. Control</a></li>
-    <li><a [routerLink]="['/administrador']"[routerLinkActive]="['activado']">Administracion</a></li>
-    <li><a [routerLink]="['/salir']"[routerLinkActive]="['activado']">Salir</a></li>
-  </ul>
+<div class="container-fluid">
+
+  <div class="row">
+    <div class="col-md-3">
+
+      <!-- menu -->
+      <div id="MainMenu">
+        <div class="list-group panel">
+          <a class="list-group-item list-group-item-success" href="#" data-parent="#MainMenu">Invernaderos</a>
+          <a class="list-group-item list-group-item-success" href="#" data-parent="#MainMenu">Microcontroladores</a>
+          <a class="list-group-item list-group-item-success" href="#" data-parent="#MainMenu">Sensores</a>
+          <a class="list-group-item list-group-item-success" href="#" data-parent="#MainMenu">Actuadores</a>
+          <a class="list-group-item list-group-item-success" href="#" data-parent="#MainMenu">Parm. de Control</a>
+          <a class="list-group-item list-group-item-success" href="#demo3" data-toggle="collapse" data-parent="#MainMenu">Administracion <i class="fa fa-caret-down"></i></a>
+          <div class="collapse" id="demo3">
+            <a class="list-group-item" href="">Lista usuarios</a>
+            <a class="list-group-item" href="">Baja Usuarios</a>
+            <a class="list-group-item" href="">Alta Usuarios</a>
+          </div>
+          <a class="list-group-item list-group-item-success" href="#demo4" data-toggle="collapse" data-parent="#MainMenu">Item 4  <i class="fa fa-caret-down"></i></a>
+          <div class="collapse" id="demo4">
+            <a class="list-group-item" href="">Subitem 1</a>
+            <a class="list-group-item" href="">Subitem 2</a>
+            <a class="list-group-item" href="">Subitem 3</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </div>
+
+
+
