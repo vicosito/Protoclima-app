@@ -1,0 +1,24 @@
+<div class="container-fluid">
+  <div class="row">
+    <side-menu></side-menu>
+
+
+    <div class="col-md-6">
+      <table class="table table-hover">
+        <tr>
+          <th>Nombre</th>
+          <th>Apellido</th>
+          <th>Login</th>
+          <th>Email</th>
+        </tr>
+        <tr *ngFor="let usuario of usuarios">
+          <td>{{usuario.name}}</td>
+          <td>{{usuario.lastname}}</td>
+          <td>{{usuario.login}}</td>
+          <td>{{usuario.email}}</td>
+        </tr>
+      </table>
+
+    </div>
+  </div>
+</div>
