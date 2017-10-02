@@ -22,4 +22,10 @@ export class ListaUsuarioComponent implements OnInit {
   asignarUsuarios(data){
     this.usuarios = JSON.parse(data._body);
   }
+  desactivar(idusuario){
+    this._usuarioService.postDesactivarUsuario(idusuario).subscribe(
+      data => console.log(data)),
+      error => alert(error)
+
+  }
 }
